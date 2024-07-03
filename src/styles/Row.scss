@@ -1,0 +1,24 @@
+.row{
+
+    .posters{
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        padding: 20px;
+        // para que desaparezca visualmente el scroll horizontal, pero mantenga la funcionalidad añadiré:
+        .poster{
+            object-fit: contain;
+            width: 100%;
+            max-height: 120px;
+            margin-right: 0.5rem;
+            border-radius: 5%;
+            transition: transform 450ms;
+        }
+        :hover{
+            transform: scale(1.08);
+        }
+    }
+    ::-webkit-scrollbar{
+        display: none;
+    }
+}
