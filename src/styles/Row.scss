@@ -1,5 +1,6 @@
 .row{
-
+    color: white;
+    margin-left: 20px;
     .posters{
         display: flex;
         overflow-y: hidden;
@@ -11,11 +12,17 @@
             width: 100%;
             max-height: 120px;
             margin-right: 0.5rem;
-            border-radius: 5%;
+            border-radius: 2%;
             transition: transform 450ms;
         }
         :hover{
             transform: scale(1.08);
+        }
+        .posterLarge{
+            max-height: 250px;
+        }
+        .posterLarge:hover{
+            transform: scale(1.11);
         }
     }
     ::-webkit-scrollbar{

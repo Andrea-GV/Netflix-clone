@@ -11,6 +11,7 @@ const requests = {
     fetchRomanceMovies: `/discover/movie?api_key=${API_KEY}&with_genres=10749`,
     fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
     // DESDE AQUÍ LA WEB API
+    fetchNowPlaying: `/movie/now_playing?api_key=${API_KEY}`,
     fetchCollection: `/search/collection?api_key=${API_KEY}`,
     fetchCompany: `/search/company?api_key=${API_KEY}`,
     fetchKeyword: `/search/keyword?api_key=${API_KEY}`,
