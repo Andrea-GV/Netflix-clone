@@ -20,7 +20,7 @@ function Nav() {
       }, []);
     
     // Se cambia esta función desactualizada, por separar la función de handleScroll para poder aplicarle añadir y/o retirar el EventListener del scroll
-    
+
     //useEffect(() => {
     //     window.addEventListener('scroll', () => {
     //         if (window.scrollY > 100) {
