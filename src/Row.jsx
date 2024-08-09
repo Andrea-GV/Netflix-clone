@@ -23,35 +23,51 @@ function Row({ title, fetchUrl, isLargeRow }) {
     }, [fetchUrl])
 
     const opts = {
-        height: "390",
-        width: "100%",
+        height: "300px",
+        width: "50%",
         playerVars: {
             autoplay: 1,
         },
     };
 
-    const handleOnClick = (movie) => {
-        if (trailerUrl) {
-            setTrailerUrl('');
-        } else {
+    // const handleOnClick = (movie) => {
+    //     if (trailerUrl) {
+    //         setTrailerUrl('');
+    //     } else {
             // originalmente tenía esto: 
             //movieTrailer(movie?.name || "")
             //  .then((url) => {
             //     const urlParams = new URLSearchParams(new URL(url).search);
             //     setTrailerUrl(urlParams.get("v"));
             // })
-            // .catch((error) => console.log(error))
-            const movieTtitle = movie?.title | movie?.original_name || movie?.original_title || movie?.name || "";
-            movieTrailer(movieTtitle)
-            .then((url) => {
-                const parsedUrl = urlParse(url, true);
-                const videoId = parsedUrl.query.v;
-                setTrailerUrl(videoId);
-            })
-            .catch((error) => console.log(error))
-        }
-    }
+        //     // .catch((error) => console.log(error))
+        //     const movieTtitle = movie?.title | movie?.original_name || movie?.original_title || movie?.name || "";
+        //     movieTrailer(movieTtitle)
+        //     .then((url) => {
+        //         const parsedUrl = urlParse(url, true);
+        //         const videoId = parsedUrl.query.v;
+        //         setTrailerUrl(videoId);
+        //     })
+        //     .catch((error) => console.log(error))
+        // }
+        //}
 
+    const handleMouseOver = async (movie) => {
+        if (trailerUrl) {
+        setTrailerUrl('');
+        } else {
+        const movieTitle = movie?.title || movie?.original_name || movie?.original_title || movie?.name || "";
+        const url = await movieTrailer(movieTitle);
+        const parsedUrl = urlParse(url, true);
+        const videoId = parsedUrl.query.v;
+        setTrailerUrl(videoId);
+        }
+    };
+
+    const handleMouseOut = () => {
+    setTrailerUrl('');
+    };
+    
   return (
     <div className="row">
         <h2>{title}</h2>
@@ -60,7 +76,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
             {movies.map(movie => (
                 <img
                     key={movie.id}
-                    onClick={() => handleOnClick(movie)}
+                    onMouseOver={() => handleMouseOver(movie)}
+                    onMouseOut={handleMouseOut}
+                    // onClick={() => handleOnClick(movie)}
                     className={`poster ${isLargeRow && "posterLarge"}`}
                     src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
             ))}

@@ -1,25 +1,69 @@
 .nav{
-    position: fixed;
-    top: 0;
     width: 100%;
-    padding: 20px;
-    height: 30px;
+    padding: 1% 4%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    font-size: 14px;
+    color: #e5e5e5;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.7) 10%, transparent);
+    top: 0;
     z-index: 1;
-
     transition-timing-function: ease-in;
     transition: all 0.5s;
-    .logo{
-        position: fixed;
-        left: 20p;
-        width: 80px;
-        object-fit: contain;
+
+    .nav-left{
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        width: 70%;
+        
+        .logo{
+            width: 15%;
+        }
+
+        ul{
+            display: flex;
+            list-style: none;
+            gap: 20px;
+
+            li{
+                cursor: pointer;
+            }
+        }
     }
-    .avatar{
-        position: fixed;
-        right: 20px;
-        width: 30px;
-        object-fit: contain;
+    .nav-right{
+        display: flex;
+        align-items: center;
+        gap: 12%;
+        width: 15vw;
+        .icons{
+            width: 20px;
+            cursor: pointer;
+        }
+        .nav-profile{
+            width: 15%;
+            cursor: pointer;
+            display: flex;
+            .profile{
+                border-radius: 10%;
+                width: 200%;
+            }   
+        }
     }
+    // ANTIGUOS ESTILOS CON CLEVERPROGRAMMER
+    // .logo{
+    //     position: fixed;
+    //     left: 20p;
+    //     width: 80px;
+    //     object-fit: contain;
+    // }
+    // .avatar{
+    //     position: fixed;
+    //     right: 20px;
+    //     width: 30px;
+    //     object-fit: contain;
+    // }
 }
 .nav__black{
     background-color: #111;
