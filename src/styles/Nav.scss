@@ -16,16 +16,17 @@
         display: flex;
         align-items: center;
         gap: 50px;
-        width: 70%;
-        
+        // gap: 1vw;
+
         .logo{
-            width: 15%;
+            width: 6.5vw;
         }
 
         ul{
             display: flex;
             list-style: none;
-            gap: 20px;
+            // gap: 20px;
+            gap: 1.5vw;
 
             li{
                 cursor: pointer;
@@ -35,31 +36,111 @@
     .nav-right{
         display: flex;
         align-items: center;
-        gap: 12%;
-        width: 15vw;
+        gap: 1vw;
         .icons{
-            width: 20px;
+            width: 2vw;
             cursor: pointer;
         }
         .nav-profile{
-            width: 15%;
-            cursor: pointer;
+            // width: 15%;
             display: flex;
+            align-items: center;
+            gap: 6%;
+            cursor: pointer;
+            position: relative;
             .profile{
                 border-radius: 10%;
-                width: 200%;
-            }   
+                object-fit: fill;
+                // width: 200%;
+            }  
+            .dropdown{
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: max-content;
+                background: #191919;
+                // padding: 18px 22px;
+                padding: 2vw 2vw;
+                border-radius: 2px;
+                // border-radius: 2px;
+                z-index: 1;
+                display: none;
+                p{
+                    font-size: 13px;
+                    cursor: pointer;
+                    background-color: transparent;
+                    padding: 0.4rem;
+                }
+                :hover{
+                    text-decoration: underline;
+                }
+                // .signout{
+                //     text-decoration: underline;
+                    
+                // }
+            } 
+            &:hover .dropdown{
+                display: block;
+            }
         }
     }
-    // ANTIGUOS ESTILOS CON CLEVERPROGRAMMER
-    // .logo{
-    //     position: fixed;
-    //     left: 20p;
-    //     width: 80px;
-    //     object-fit: contain;
-    // }
-    // .avatar{
-    //     position: fixed;
+
+    // Ajustes para que sea responsive
+    @media (min-width: 1024px){     // laptop
+        .nav {
+            padding: 1% 4%;
+            .nav-left {
+                width: 65vw;
+            }
+            .nav-right {
+                width: 15vw;
+            }
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) { // tablet
+        .nav {
+            padding: 2% 6%;
+            .nav-left {
+                width: 70vw;
+            }
+            .nav-right {
+                width: 20vw;
+            }
+        }
+    }
+
+    @media (max-width: 767px) { // phone
+        .nav {
+            padding: 3% 8%;
+            
+            .nav-left {
+                width: 80vw;
+                flex-direction: column;
+                ul {
+                    flex-direction: column;
+                }
+            }
+            
+            .nav-right {
+                width: 20vw;
+                flex-direction: column;
+                .icons {
+                    margin-bottom: 10px;
+                    /* add some space between icons */
+                }
+            }
+            
+        }
+    }
+        // ANTIGUOS ESTILOS CON CLEVERPROGRAMMER
+        // .logo{
+            //     position: fixed;
+            //     left: 20p;
+            //     width: 80px;
+            //     object-fit: contain;
+            // }
+            // .avatar{
+                //     position: fixed;
     //     right: 20px;
     //     width: 30px;
     //     object-fit: contain;

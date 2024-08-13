@@ -59,7 +59,12 @@ function Nav() {
         
         <div className="nav-profile">
           <img src={profile_img} alt="profile image" className='profile' />
-          <img src={caret_icon} alt="caret" className='icons'/>
+          <img src={caret_icon} alt="caret" className='icons' />
+          <div className="dropdown">
+            <p>My profile</p>
+            <p>Settings</p>
+            <p className='signout'>Sign Out</p>
+          </div>
         </div>
       </div>
         {/* <img className="avatar"

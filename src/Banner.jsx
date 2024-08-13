@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "./axios";
 import requests from "./requests";
 import "./styles/Banner.scss";
+import play_icon from './assets/play_icon.png'
+import info_icon from './assets/info_icon.png'
+
 
 function Banner() {
     const [movie, setMovie] = useState([]);
@@ -37,15 +40,15 @@ function Banner() {
             <h1 className="title">
                 {movie?.title || movie?.name || movie?.original_name}
             </h1>  
-              
-            <div className="buttons">
-                <button className="button">Play</button>
-                <button className="button">More info</button>
-            </div>
             
             <h1 className="description">
                 {truncate(movie?.overview, 150)}
             </h1>
+              
+            <div className="btns">
+                  <button className="btn"><img src={play_icon} alt="play icon" /> Play</button>
+                <button className="btn dark-btn"><img src={info_icon} alt="info icon" /> More Info</button>
+            </div>
         </div>
         <div className="fadeBottom"/>
     </header>
