@@ -23,13 +23,15 @@ Crear Página Inicio:
 Accedido al usuario:
 
 - Lo que antes estaba en App -> Pasa a ser UserBoard
-- - Cambiar Nav ->
+- - Cambiar Nav -> XXX
 
     - - - - Añadir buscador
     - - - Añadir menú desplegable
 
     - - Funcionalidad a:
-        - - Logo Netflix (Ir a la Home)
+        - OK - Logo Netflix (Ir a la Home)
+        - OK - Enlaces a cada apartado:
+          - - Los que son personalizados, se rompen
         - - - Avatar: Editar perfil
 
 - Banner:
@@ -45,3 +47,7 @@ Accedido al usuario:
       - Añadir
       - Like
       - Descripción
+
+# Paso 3. Hacer la app responsive
+
+- Aplicando CSS Media Query

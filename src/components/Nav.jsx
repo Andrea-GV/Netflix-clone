@@ -40,15 +40,17 @@ function Nav() {
   return (
     <div className={`nav ${show && 'nav__black'}`}>
       <div className='nav-left'>
-        <img className="logo"
-          src={logo} alt="Netflix Logo" />
+        <a href="https://www.netflix.com">
+          <img className="logo"
+            src={logo} alt="Netflix Logo" />
+        </a>
         <ul>
-          <li>Home</li>
-          <li>TV Shows</li>
-          <li>Movies</li>
-          <li>New & Popular</li>
-          <li>My List</li>
-          <li>Browse by Languages</li>
+          <a href="https://www.netflix.com"><span>Home</span></a>
+          <a href="https://www.netflix.com/browse/genre/83"><span>TV Shows</span></a>
+           <a href="https://www.netflix.com/browse/genre/34399"><span>Movies</span></a>
+          <a href="https://www.netflix.com/latest"><span>New & Popular</span></a>
+          <a href="https://www.netflix.com/browse/my-list"><span>My List</span></a>
+          <a href="https://www.netflix.com/browse/original-audio"><span>Browse by Languages</span></a>
         </ul>
       </div>  
 

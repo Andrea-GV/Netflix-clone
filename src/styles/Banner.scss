@@ -34,6 +34,7 @@
                 img{
                     width: 2rem;
                     margin-right: 0.5rem;
+                    background-color: transparent;
                 }
             }
             :hover{
@@ -45,11 +46,11 @@
                 // background-color: rgba(51, 51, 51, 0.5);
                 background-color: #6d6d6da0;
                 color: #fff;
-            }
-            .dark-btn:hover{
-                color: #fff;
-                background-color: #50505081;
-                transition: all 0.2s;
+                &:hover{
+                    color: #fff;
+                    background-color: #6d6d6e66;
+                    transition: all 0.2s;
+                }
             }
         }
         .description{

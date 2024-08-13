@@ -30,43 +30,47 @@ function Row({ title, fetchUrl, isLargeRow }) {
         },
     };
 
-    // const handleOnClick = (movie) => {
-    //     if (trailerUrl) {
-    //         setTrailerUrl('');
-    //     } else {
-            // originalmente tenía esto: 
-            //movieTrailer(movie?.name || "")
-            //  .then((url) => {
-            //     const urlParams = new URLSearchParams(new URL(url).search);
-            //     setTrailerUrl(urlParams.get("v"));
-            // })
-        //     // .catch((error) => console.log(error))
-        //     const movieTtitle = movie?.title | movie?.original_name || movie?.original_title || movie?.name || "";
-        //     movieTrailer(movieTtitle)
-        //     .then((url) => {
-        //         const parsedUrl = urlParse(url, true);
-        //         const videoId = parsedUrl.query.v;
-        //         setTrailerUrl(videoId);
-        //     })
-        //     .catch((error) => console.log(error))
-        // }
-        //}
+    // Para hacer click sobre la película, en caso de que no quiera hacer click, sólo al pasar el ratón por encima usar MouseOver-MouseOut 
 
-    const handleMouseOver = async (movie) => {
+    const handleOnClick = (movie) => {
         if (trailerUrl) {
-        setTrailerUrl('');
+            setTrailerUrl('');
         } else {
-        const movieTitle = movie?.title || movie?.original_name || movie?.original_title || movie?.name || "";
-        const url = await movieTrailer(movieTitle);
-        const parsedUrl = urlParse(url, true);
-        const videoId = parsedUrl.query.v;
-        setTrailerUrl(videoId);
+            // originalmente tenía esto: 
+            movieTrailer(movie?.name || "")
+             .then((url) => {
+                const urlParams = new URLSearchParams(new URL(url).search);
+                setTrailerUrl(urlParams.get("v"));
+            })
+            // .catch((error) => console.log(error))
+            const movieTtitle = movie?.title | movie?.original_name || movie?.original_title || movie?.name || "";
+            movieTrailer(movieTtitle)
+            .then((url) => {
+                const parsedUrl = urlParse(url, true);
+                const videoId = parsedUrl.query.v;
+                setTrailerUrl(videoId);
+            })
+            .catch((error) => console.log(error))
         }
-    };
+        }
 
-    const handleMouseOut = () => {
-    setTrailerUrl('');
-    };
+    // Para que empiece el trailer al pasar por encima el ratón
+
+    // const handleMouseOver = async (movie) => {
+    //     if (trailerUrl) {
+    //     setTrailerUrl('');
+    //     } else {
+    //     const movieTitle = movie?.title || movie?.original_name || movie?.original_title || movie?.name || "";
+    //     const url = await movieTrailer(movieTitle);
+    //     const parsedUrl = urlParse(url, true);
+    //     const videoId = parsedUrl.query.v;
+    //     setTrailerUrl(videoId);
+    //     }
+    // };
+
+    // const handleMouseOut = () => {
+    // setTrailerUrl('');
+    // };
     
   return (
     <div className="row">
@@ -76,9 +80,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
             {movies.map(movie => (
                 <img
                     key={movie.id}
-                    onMouseOver={() => handleMouseOver(movie)}
-                    onMouseOut={handleMouseOut}
-                    // onClick={() => handleOnClick(movie)}
+                    // onMouseOver={() => handleMouseOver(movie)}
+                    // onMouseOut={handleMouseOut}
+                    onClick={() => handleOnClick(movie)}
                     className={`poster ${isLargeRow && "posterLarge"}`}
                     src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
             ))}

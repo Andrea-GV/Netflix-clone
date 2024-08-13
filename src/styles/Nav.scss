@@ -17,20 +17,22 @@
         align-items: center;
         gap: 50px;
         // gap: 1vw;
-
+        
         .logo{
             width: 6.5vw;
         }
-
+        
         ul{
             display: flex;
             list-style: none;
-            // gap: 20px;
             gap: 1.5vw;
-
-            li{
+            
+            a{
+                text-decoration: none;
+                color: white;
                 cursor: pointer;
             }
+
         }
     }
     .nav-right{
