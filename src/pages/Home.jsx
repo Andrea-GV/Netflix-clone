@@ -1,63 +1,32 @@
 import '../styles/Home.scss'
-import LenguageSelect from "../components/LenguageSelect"
-import Nav from "../components/Nav"
+// import LenguageSelect from "../components/LenguageSelect"
+import Row from '../Row.jsx'
+import requests from '../requests.jsx';
+import Banner from '../Banner.jsx';
+import Nav from '../components/Nav.jsx';
+import Footer from '../components/Footer.jsx';
 
 function Home() {
 
   return (
-    <div>
-      <Nav></Nav>
-      {/*
-      <header className="header">
-        <div className="wrapper">
-          <div className="container">
-            <img className="icon" src="https://upload.wikimedia.org/wikipedia/commons/4/42/Dfnefr.png" alt="Netflix Logo" />
-            <div className="select">
-              <LenguageSelect />
-              
-              AL SELECT LE FALTAN ESTILOS
-            </div>
-            <button>Sign In</button>
+       <div className='App'>
+      <Nav/>
+      <Banner/>
 
-          </div>
-        </div>
-      </header>
-
-      <main className="main-container">
-        <div className="register">
-          <h1>Unlimited movies, TV shows, and more</h1>
-        </div>
-
-        <div className="more-info"> POPCORN BANNER</div>
-
-        <div>
-          <h1>Enjoy on your TV</h1>
-          <h2>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</h2>
-        </div>
-
-        <div>
-          <h1>Watch everywhere</h1>
-          <h2>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</h2>
-        </div>
-
-        <div>
-          <h1>Create profiles for kids</h1>
-          <h2>Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</h2>
-        </div>
-
-        <div>
-          <h1>Download your shows to watch offline</h1>
-          <h2>Watch on a plane, train, or submarine...</h2>
-        </div>
-        <div className="faqs">
-          <h1>Frequently Asked Questions</h1>
-        </div>
-      </main>
-
-      <footer className="footer">
-
-      </footer>
-  */}
+      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
+      <Row title="Trending Today" fetchUrl={requests.fetchTrendingDay} />
+      <Row
+        title="Netflix Originals" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
+      
+      {/* TRYING NEW THINGS */}
+       <Row title="Now Playing" fetchUrl={requests.fetchNowPlaying} />
+      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
+      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Footer/>
     </div>
   )
 }
