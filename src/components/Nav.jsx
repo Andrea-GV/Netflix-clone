@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import '../styles/Nav.scss'
-import logo from '../assets/Logonetflix.png'
+import logo from '../assets/logo.png'
 import search_icon from '../assets/search_icon.png'
 import bell_icon from '../assets/bell_icon.png'
 import profile_img from '../assets/profile_img.png'
