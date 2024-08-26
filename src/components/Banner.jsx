@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import axios from "./axios";
-import requests from "./requests";
-import "./styles/Banner.scss";
-import play_icon from './assets/play_icon.png'
-import info_icon from './assets/info_icon.png'
+import axios from "../axios.jsx";
+import requests from "../requests.jsx";
+import "../styles/components/Banner.scss"   ;
+import play_icon from '../assets/play_icon.png'
+import info_icon from '../assets/info_icon.png'
 
 
 function Banner() {

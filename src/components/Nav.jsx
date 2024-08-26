@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import '../styles/Nav.scss'
+import '../styles/components/Nav.scss'
 import logo from '../assets/logo.png'
 import search_icon from '../assets/search_icon.png'
 import bell_icon from '../assets/bell_icon.png'

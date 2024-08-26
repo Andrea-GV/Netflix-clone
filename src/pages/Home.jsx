@@ -1,8 +1,8 @@
 import '../styles/Home.scss'
 // import LenguageSelect from "../components/LenguageSelect"
-import Row from '../Row.jsx'
+import Row from '../components/Row.jsx';
 import requests from '../requests.jsx';
-import Banner from '../Banner.jsx';
+import Banner from '../components/Banner.jsx';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
 
