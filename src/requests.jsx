@@ -3,15 +3,20 @@ const API_KEY = "011b488c08dce799b8335227bc5f6364";
 
 const requests = {
     fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
+    fetchTrendingDay: `/trending/all/day?api_key=${API_KEY}&language=en-US`,
     fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
+    fetchNowPlaying: `/movie/now_playing?api_key=${API_KEY}`,
     fetchTopRated: `/movie/top_rated?api_key=${API_KEY}&language=en-US`,
+    fetchUpcoming: `/movie/upcoming?api_key=${API_KEY}&language=en-US`,
     fetchActionMovies: `/discover/movie?api_key=${API_KEY}&with_genres=28`,
     fetchComedyMovies: `/discover/movie?api_key=${API_KEY}&with_genres=35`,
     fetchHorrorMovies: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
     fetchRomanceMovies: `/discover/movie?api_key=${API_KEY}&with_genres=10749`,
     fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
-    // DESDE AQUÍ LA WEB API
-    fetchNowPlaying: `/movie/now_playing?api_key=${API_KEY}`,
+
+
+    // SIN USO
+
     fetchCollection: `/search/collection?api_key=${API_KEY}`,
     fetchCompany: `/search/company?api_key=${API_KEY}`,
     fetchKeyword: `/search/keyword?api_key=${API_KEY}`,
@@ -19,7 +24,7 @@ const requests = {
     fetchMulti: `/search/multi?api_key=${API_KEY}`,
     fetchPerson: `/search/person?api_key=${API_KEY}`,
     fetchTV: `/search/tv?api_key=${API_KEY}`,
-    fetchTrendingDay: `/trending/all/day?api_key=${API_KEY}&language=en-US`
+
 }
 
 export default requests;

@@ -9,23 +9,51 @@
         overflow-y: hidden;
         overflow-x: scroll;
         padding-top: 1%;
+        width: 100%;
+        height: auto;
+
+        .poster-container {
+            position: relative;
+            display: inline-block;
+            margin-right: 0.5rem;
+            border-radius: 2%;
+        }
        
         .poster{
             object-fit: contain;
-            width: 100%;
-            max-height: 120px;
+            max-height: 150px;
             margin-right: 0.5rem;
             border-radius: 2%;
             transition: transform 450ms;
         }
         :hover{
-            transform: scale(1.08);
+            transform: scale(1.00);
         }
         .posterLarge{
             max-height: 250px;
         }
+        .poster-container:hover .poster {
+            transform: scale(1.08);
+        }
         .posterLarge:hover{
             transform: scale(1.11);
+        }
+        .poster-title {
+            position: absolute;
+            bottom: 0;
+            left: -0.29rem;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7); 
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 1.5em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .poster-container:hover .poster-title {
+            opacity: 1;
         }
     }
 

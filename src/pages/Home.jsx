@@ -21,6 +21,8 @@ function Home() {
       {/* TRYING NEW THINGS */}
        <Row title="Now Playing" fetchUrl={requests.fetchNowPlaying} />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row title="Upcoming" fetchUrl={requests.fetchUpcoming} />
+      
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
