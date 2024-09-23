@@ -1,7 +1,9 @@
-import '././styles/App.scss'
-import Home from './pages/Home.jsx'
-import Login from './pages/Login.jsx'
+import './styles/pages/App.scss';
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
 import { Routes, Route } from 'react-router-dom';
+import Player from './pages/Player.jsx';
+
 // import Row from './Row.jsx'
 // import requests from './requests.jsx';
 // import Banner from './Banner.jsx';
@@ -18,7 +20,8 @@ function App() {
     <div className='App'>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/login' element={<Login />} />
+        <Route path='/player/:id' element={<Player/>}/>
       </Routes>
       {/* <Nav/>
       <Banner/>

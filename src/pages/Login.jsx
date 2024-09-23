@@ -1,7 +1,7 @@
-import '../styles/Login.scss'
+import '../styles/pages/Login.scss'
 import logo from '../assets/logo.png'
 import { useState } from 'react'
-const Login = () => {
+function Login() {
   
   const [signState, setSignState] = useState("Sign In")
   
