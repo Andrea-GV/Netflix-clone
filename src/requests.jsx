@@ -1,8 +1,12 @@
 // request.js no es un componente, es un archivo que le daremos funcionalidad para hacer las peticiones
-const API_KEY = "011b488c08dce799b8335227bc5f6364";
 
+const API_KEY = "011b488c08dce799b8335227bc5f6364";
+const baseURL = "https://api.themoviedb.org/3"
 
 const requests = {
+    // prueba con lo sig
+    fetchMovies: `${baseURL}/movie/popular?api_key=${API_KEY}&language=en-US`,
+    fetchMovie: (id) => `${baseURL}/movie/${id}?api_key=${API_KEY}&language=en-US`,
     fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
     fetchTrendingDay: `/trending/all/day?api_key=${API_KEY}&language=en-US`,
     fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
@@ -21,7 +25,7 @@ const requests = {
     fetchCollection: `/search/collection?api_key=${API_KEY}`,
     fetchCompany: `/search/company?api_key=${API_KEY}`,
     fetchKeyword: `/search/keyword?api_key=${API_KEY}`,
-    fetchMovie: `/search/movie?api_key=${API_KEY}&language=en-US`,
+    // fetchMovie: `${baseURL}/search/movie/:id?api_key=${API_KEY}&language=en-US`,
     fetchMulti: `/search/multi?api_key=${API_KEY}`,
     fetchPerson: `/search/person?api_key=${API_KEY}`,
     fetchTV: `/search/tv?api_key=${API_KEY}`,

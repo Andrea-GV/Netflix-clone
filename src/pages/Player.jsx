@@ -8,8 +8,8 @@ import YouTube from 'react-youtube';
 import { useState, useEffect } from 'react'; 
 import requests from '../requests.jsx';
 
-function Player({ fetchUrl }) {
-    // const { id } = useParams();
+function Player({}) { //  fetchUrl 
+    const {id} = useParams();
     const [trailerUrl, setTrailerUrl] = useState("");
     const [movie, setMovie] = useState({});
 
@@ -24,7 +24,7 @@ function Player({ fetchUrl }) {
     useEffect(() => {
         async function fetchData() {
             try {
-                const request = await axios.get(fetchUrl);
+                const request = await axios.get(requests.fetchMovie(id));
                 // verify the movie fetching
                 console.log("Movie fetched", request);
                 setMovie(request.data);
@@ -33,7 +33,7 @@ function Player({ fetchUrl }) {
             }
         }
         fetchData();
-    }, []); 
+    }, [id]); 
 
     useEffect(() => {
         async function fetchTrailer() {
@@ -66,7 +66,7 @@ function Player({ fetchUrl }) {
             <p>Type</p>
             <p>Cast: </p>
                 <h1>{movie.title || movie.original_name}</h1>
-                <YouTube videoId="dQw4w9WgXcQ" opts={opts} />
+                {/* <YouTube videoId="" opts={opts} /> */}
             {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
         </div>
 </div>

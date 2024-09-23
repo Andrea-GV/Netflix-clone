@@ -14,5 +14,3 @@ const instance = axios.create({
 // });
 
 export default instance;
-
-// 27.8.24 HE DEJADO POR AQUÍ EL PROYECTO, ME DA UN ERROR AL TRAER LA INFO DEL TRAILER EN PLAYER.JSX
