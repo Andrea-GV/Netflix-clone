@@ -2,26 +2,52 @@
 
 const API_KEY = "011b488c08dce799b8335227bc5f6364";
 const baseURL = "https://api.themoviedb.org/3"
+// DESHACER TODOS ESTOS CONST Y GETFETCHURL SI NO SALE BIEN FETCHURL EN PLAYER-ROW
+// const fetchTrending = `${baseURL}/trending/all/week?api_key=${API_KEY}&language=en-US`;
+// const fetchNetflixOriginals = `${baseURL}/discover/tv?api_key=${API_KEY}&with_networks=213`;
+// const fetchNowPlaying = `${baseURL}movie/now_playing?api_key=${API_KEY}&language=en-US`;
+// const fetchTopRated = `${baseURL}movie/top_rated?api_key=${API_KEY}&language=en-US`;
+// const fetchUpcoming = `${baseURL}movie/upcoming?api_key=${API_KEY}&language=en-US`;
+// const fetchMovies= `${baseURL}/movie/popular?api_key=${API_KEY}&language=en-US`;
 
+// const getFetchUrl = (category) => {
+//   switch (category) {
+//     case 'trending':
+//       return fetchTrending().url;
+//     case 'netflixOriginals':
+//       return fetchNetflixOriginals().url;
+//     case 'nowPlaying':
+//       return fetchNowPlaying().url;
+//     case 'topRated':
+//       return fetchTopRated().url;
+//     case 'upcoming':
+//       return fetchUpcoming().url;
+//     default:
+//       return fetchMovies().url;
+//   }
+// };
+
+// export { fetchTrending, fetchNetflixOriginals, fetchNowPlaying, fetchTopRated, fetchUpcoming, getFetchUrl };
+    
+//              DEVOLVERÍA TODO ESTE CÓDIGO A SU SITIO
+    
 const requests = {
     // prueba con lo sig
     fetchMovies: `${baseURL}/movie/popular?api_key=${API_KEY}&language=en-US`,
-    fetchMovie: (id) => `${baseURL}/movie/${id}?api_key=${API_KEY}&language=en-US`,
-    fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
-    fetchTrendingDay: `/trending/all/day?api_key=${API_KEY}&language=en-US`,
-    fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
-    fetchNowPlaying: `/movie/now_playing?api_key=${API_KEY}`,
-    fetchTopRated: `/movie/top_rated?api_key=${API_KEY}&language=en-US`,
-    fetchUpcoming: `/movie/upcoming?api_key=${API_KEY}&language=en-US`,
+    fetchMovie: (id) => `${baseURL}/movie/${id}?api_key=${API_KEY}&language=en-US`, 
+    fetchTrending: `${baseURL}/trending/all/week?api_key=${API_KEY}&language=en-US`,
+    fetchTrendingDay: `${baseURL}/trending/all/day?api_key=${API_KEY}&language=en-US`,
+    fetchNetflixOriginals: `${baseURL}/discover/tv?api_key=${API_KEY}&with_networks=213`,
+    fetchNowPlaying: `${baseURL}/movie/now_playing?api_key=${API_KEY}`,
+    fetchTopRated: `${baseURL}/movie/top_rated?api_key=${API_KEY}&language=en-US`,
+    fetchUpcoming: `${baseURL}/movie/upcoming?api_key=${API_KEY}&language=en-US`,
     fetchActionMovies: `/discover/movie?api_key=${API_KEY}&with_genres=28`,
     fetchComedyMovies: `/discover/movie?api_key=${API_KEY}&with_genres=35`,
     fetchHorrorMovies: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
     fetchRomanceMovies: `/discover/movie?api_key=${API_KEY}&with_genres=10749`,
     fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
 
-
     // SIN USO
-
     fetchCollection: `/search/collection?api_key=${API_KEY}`,
     fetchCompany: `/search/company?api_key=${API_KEY}`,
     fetchKeyword: `/search/keyword?api_key=${API_KEY}`,
@@ -29,7 +55,6 @@ const requests = {
     fetchMulti: `/search/multi?api_key=${API_KEY}`,
     fetchPerson: `/search/person?api_key=${API_KEY}`,
     fetchTV: `/search/tv?api_key=${API_KEY}`,
-
 }
 
 export default requests;

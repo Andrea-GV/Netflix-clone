@@ -8,7 +8,7 @@ import YouTube from 'react-youtube';
 import { useState, useEffect } from 'react'; 
 import requests from '../requests.jsx';
 
-function Player({}) { //  fetchUrl 
+function Player() { //  fetchUrl 
     const {id} = useParams();
     const [trailerUrl, setTrailerUrl] = useState("");
     const [movie, setMovie] = useState({});
@@ -43,10 +43,15 @@ function Player({}) { //  fetchUrl
                     const trailer = await movieTrailer(movie.title || movie.original_name);
                     // verify the trailer
                     console.log("Trailer URL:", trailer);
-                    const urlParams = new URLSearchParams(new URL(trailer).search);
-                    // Verify the url
-                    console.log("Video ID:", urlParams);
-                    setTrailerUrl(urlParams.get("v"));
+                    if (trailer) {
+                        
+                        const urlParams = new URLSearchParams(new URL(trailer).search);
+                        // Verify the url
+                        console.log("Video ID:", urlParams);
+                        setTrailerUrl(urlParams.get("v"));
+                    } else {
+                        console.log("No trailer found");
+                    }
             } catch (error) {
 
                 console.error("Error fetching trailer:", error);

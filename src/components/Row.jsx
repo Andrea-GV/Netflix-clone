@@ -1,29 +1,30 @@
 import { useState, useEffect } from "react";
 import axios from "../axios.jsx";
 import "../styles/components/Row.scss"
-import requests from "../requests.jsx";
+// import requests from "../requests.jsx";      DESHACER TB ESTE CAMBIO 
+// import { getFetchUrl } from '../requests.jsx';
 // import YouTube from "react-youtube";
-import movieTrailer from "movie-trailer";
+// import movieTrailer from "movie-trailer";
 import urlParse from 'url-parse'
 import { useNavigate } from "react-router-dom";
 
 const base_url = "https://image.tmdb.org/t/p/original";
 
-function Row({ title, isLargeRow }) { // fetchUrl, 
+function Row({ title, isLargeRow, fetchUrl }) { // fetchUrl, 
 
     const [movies, setMovies] = useState([]);
     const [trailerUrl, setTrailerUrl] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
-       async function fetchData() {
-           const request = await axios.get(requests.fetchMovies);
-           // console.log(request.data.results)
-           setMovies(request.data.results);
-           return request;
-        } 
+        async function fetchData() {
+            const request = await axios.get(fetchUrl);
+            // console.log(request.data.results)
+            setMovies(request.data.results);
+            return request;
+        }
         fetchData();
-    }, []) // fetchUrl
+    }, [fetchUrl]); 
 
     // Configuración de visualización de trailer
     // const opts = {
@@ -81,7 +82,7 @@ function Row({ title, isLargeRow }) { // fetchUrl,
         <h2>{title}</h2>
           
         <div className="posters">
-              {movies.map(movie => (
+              {movies && movies.length > 0 && movies.map(movie => (
                   // Div para contener imagen y título de cada película
                 <div key={movie.id} className="poster-container">
                 <img
