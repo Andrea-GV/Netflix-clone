@@ -64,15 +64,16 @@ function Player() { //  fetchUrl
     return (
     <div className='player'>
         <img src={back_arrow_icon} alt={back_arrow_icon} />
-
+        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
         <div className="player-info">
-            <p>Published Date</p>
-            <p>Name</p>
-            <p>Type</p>
+                <p>Published Date {movie.release_date}</p>
+                {/* <p>Name</p> */}
+            <h1>{movie.title || movie.original_name}</h1>
+                
+                <p>Type </p> {/* {movie.genres.name} */}
             <p>Cast: </p>
-                <h1>{movie.title || movie.original_name}</h1>
+                {/* <h1>{movie.title || movie.original_name}</h1> */}
                 {/* <YouTube videoId="" opts={opts} /> */}
-            {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
         </div>
 </div>
   )
